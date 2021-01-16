@@ -26,15 +26,6 @@ sam-app$ sam logs -n ListRecipesFunction --tail
 $ cd listRecipes
 $ npm install
 $ npm run test
-# Integration test, requiring deploying the stack first.
-# Create the env variable AWS_SAM_STACK_NAME with the name of the stack we are testing
-$ AWS_SAM_STACK_NAME=<stack-name> npm run integ-test
-```
-
-## Cleanup
-
-```bash
-$ aws cloudformation delete-stack --stack-name <stack-name>
 ```
 
 ## Deploy
@@ -42,4 +33,10 @@ $ aws cloudformation delete-stack --stack-name <stack-name>
 ```bash
 $ sam build
 $ sam deploy --guided
+```
+
+## Cleanup
+
+```bash
+$ aws cloudformation delete-stack --stack-name <stack-name>
 ```
