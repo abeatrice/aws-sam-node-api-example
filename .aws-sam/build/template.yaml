@@ -1,0 +1,31 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: get list of recipes
+Globals:
+  Function:
+    Timeout: 3
+Resources:
+  ListRecipesFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ListRecipesFunction
+      Handler: app.lambdaHandler
+      Runtime: nodejs12.x
+      Events:
+        ApiEvent:
+          Type: Api
+          Properties:
+            Path: /recipes
+            Method: get
+  GetRecipeFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: GetRecipeFunction
+      Handler: app.lambdaHandler
+      Runtime: nodejs12.x
+      Events:
+        ApiEvent:
+          Type: Api
+          Properties:
+            Path: /recipes/{id}
+            Method: get
