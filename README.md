@@ -26,6 +26,10 @@ $ sam logs -n ListRecipesFunction --tail
 $ cd listRecipes
 $ npm install
 $ npm run test
+
+$ cd getRecipe
+$ npm install
+$ npm run test
 ```
 
 ## Deploy

@@ -14,7 +14,6 @@ let response;
  * 
  */
 exports.lambdaHandler = async (event, context) => {
-    console.log(event.pathParameters.id)
     try {
         const client = new DynamoDBClient({region: "us-east-1"});
         const data = await client.send(new GetItemCommand({
