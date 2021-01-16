@@ -14,7 +14,7 @@ $ curl http://localhost:3000/recipes/1
 ## Get Logs
 
 ```bash
-sam-app$ sam logs -n ListRecipesFunction --tail
+$ sam logs -n ListRecipesFunction --tail
 ```
 
 ## Tests
