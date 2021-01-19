@@ -1,0 +1,26 @@
+{
+  "name": "create-recipe",
+  "version": "1.0.0",
+  "description": "aws sam NodeJS REST API create example",
+  "main": "app.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha tests/unit/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abeatrice/aws-sam-node-api-example.git"
+  },
+  "author": "Andrew Beatrice",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abeatrice/aws-sam-node-api-example/issues"
+  },
+  "homepage": "https://github.com/abeatrice/aws-sam-node-api-example#readme",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.3.0",
+    "aws-sdk": "^2.828.0"
+  }
+}

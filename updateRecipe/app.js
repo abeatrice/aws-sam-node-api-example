@@ -1,10 +1,10 @@
 const {DynamoDBClient, PutItemCommand} = require("@aws-sdk/client-dynamodb");
-const {v4: uuidv4} = require("uuid");
 
 exports.lambdaHandler = async (event, context) => {
+    const id = event.pathParameters.id;
     const body = JSON.parse(event.body);
     const recipe = {
-        ID: {S: uuidv4()},
+        ID: {S: id},
         Name: {S: body.Name},
         Description: {S: body.Description},
     };
@@ -19,10 +19,10 @@ exports.lambdaHandler = async (event, context) => {
         return error;
     }
     return {
-        'statusCode': 201,
+        'statusCode': 200,
         'body': JSON.stringify({
             data: {
-                ID: recipe.ID.S,
+                ID: id,
                 Name: body.Name,
                 Description: body.Description
             }
