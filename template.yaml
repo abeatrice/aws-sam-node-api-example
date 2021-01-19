@@ -50,3 +50,18 @@ Resources:
           Properties:
             Path: /recipes
             Method: post
+  DeleteRecipeFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: deleteRecipe/
+      Handler: app.lambdaHandler
+      Runtime: nodejs12.x
+      Policies: 
+        - AWSLambdaBasicExecutionRole
+        - AmazonDynamoDBFullAccess
+      Events:
+        ApiEvent:
+          Type: Api
+          Properties:
+            Path: /recipes/{id}
+            Method: delete

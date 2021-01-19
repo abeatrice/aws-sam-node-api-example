@@ -1,0 +1,15 @@
+{
+  "name": "delete-recipe",
+  "version": "1.0.0",
+  "description": "aws sam rest api delete method example",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Beatrice",
+  "license": "MIT",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.3.0",
+    "aws-sdk": "^2.829.0"
+  }
+}
