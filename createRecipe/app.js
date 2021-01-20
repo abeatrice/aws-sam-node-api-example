@@ -18,7 +18,8 @@ exports.lambdaHandler = async (event) => {
         }
     }
 
-    const recipe = {
+    // create item
+    const item = {
         ID: {S: uuidv4()},
         Name: {S: body.Name},
         Description: {S: body.Description},
@@ -27,12 +28,14 @@ exports.lambdaHandler = async (event) => {
         const client = new DynamoDBClient({region: "us-east-1"});
         await client.send(new PutItemCommand({
             TableName: "Recipes",
-            Item: recipe
+            Item: item
         }));
     } catch (error) {
         console.log(error);
         return error;
     }
+
+    // return success
     return {
         statusCode: 201,
         body: JSON.stringify({
