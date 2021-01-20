@@ -5,6 +5,17 @@ Globals:
   Function:
     Timeout: 3
 Resources:
+  RecipesApiGateway:
+    Type: AWS::Serverless::Api
+    Properties:
+      Name: Gateway Endpoint Recipes Resource
+      StageName: Prod
+    Cors:
+      AllowMethods: "'GET,POST,PUT,DELETE,OPTIONS'"
+      AllowHeaders: "'X-Forwarded-For'"
+      MaxAge: "'600'"
+      AllowOrigin: "'*'"
+      AllowCredentials: True
   ListRecipesFunction:
     Type: AWS::Serverless::Function
     Properties:
