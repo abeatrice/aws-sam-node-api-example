@@ -1,21 +1,21 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
-Description: get list of recipes
+Description: Recipes REST API
 Globals:
   Function:
     Timeout: 3
 Resources:
-  RecipesApiGateway:
-    Type: AWS::Serverless::Api
-    Properties:
-      Name: Gateway Endpoint Recipes Resource
-      StageName: Prod
-    Cors:
-      AllowMethods: "'GET,POST,PUT,DELETE,OPTIONS'"
-      AllowHeaders: "'X-Forwarded-For'"
-      MaxAge: "'600'"
-      AllowOrigin: "'*'"
-      AllowCredentials: True
+  # RecipesApiGateway:
+  #   Type: AWS::Serverless::Api
+  #   Properties:
+  #     Name: Gateway Endpoint Recipes Resource
+  #     StageName: Prod
+  #   Cors:
+  #     AllowMethods: "'GET,POST,PUT,DELETE,OPTIONS'"
+  #     AllowHeaders: "'X-Forwarded-For'"
+  #     MaxAge: "'600'"
+  #     AllowOrigin: "'*'"
+  #     AllowCredentials: True
   ListRecipesFunction:
     Type: AWS::Serverless::Function
     Properties:
